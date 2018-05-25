@@ -4,37 +4,43 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Platform,
   StyleSheet,
   Text,
-  View
-} from 'react-native';
+  View,
+  Image,
+} from 'react-native'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
-});
+})
 
-type Props = {};
-export default class App extends Component<Props> {
+const MOCKED_MOVIES_DATA = [
+  {title: '勒布朗·詹姆斯', year: '2018骑士总冠军', posters: {thumbnail: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2467377107,2812520460&fm=27&gp=0.jpg'}},
+]
+
+// type Props = {}
+export default class App extends Component {
   render() {
+    let James = MOCKED_MOVIES_DATA[0]
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          {James.title}
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js
+          {James.year}
         </Text>
         <Text style={styles.instructions}>
-          {instructions}
+          <Image source={{uri: James.posters.thumbnail}} style={styles.thumbnail} />
         </Text>
       </View>
-    );
+    )
   }
 }
 
@@ -44,6 +50,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  thumbnail: {
+    width: 212,
+    height: 324,
   },
   welcome: {
     fontSize: 20,
@@ -55,4 +65,4 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})
