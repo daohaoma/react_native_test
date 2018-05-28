@@ -40,14 +40,14 @@ export default class RootApp extends Component {
             <View>
               <FlatList
                 data={[
-                  {key: 'Devin'},
-                  {key: 'Jackson'},
-                  {key: 'James'},
-                  {key: 'Joel'},
-                  {key: 'John'},
-                  {key: 'Jillian'},
-                  {key: 'Jimmy'},
-                  {key: 'Julie'},
+                  {key: '你'},
+                  {key: '好'},
+                  {key: '啊'},
+                  {key: '啦'},
+                  {key: '啦'},
+                  {key: '啦'},
+                  {key: '啦'},
+                  {key: '啦'},
                 ]}
                 renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
               />
